@@ -1,0 +1,16 @@
+#box-h{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.trashButton {
+    display: flex;
+    margin-left: auto;
+    margin-top: 5px;
+}
+
+.buttonAdd{
+    display: flex;
+    margin-left: auto;
+}

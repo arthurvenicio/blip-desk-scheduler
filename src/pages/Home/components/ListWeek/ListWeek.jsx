@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import HoursList from '../HoursList';
+import './style.css';
 
 const ListWeek = ({
     times,
@@ -12,7 +13,7 @@ const ListWeek = ({
     return (
         <>
             {times.weekdays.map((element, index) => (
-                <div key={index}>
+                <div id="box" key={index}>
                     <h2>{element.day}</h2>
                     <HoursList
                         workTimes={element.workTimes}

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import Input from '../../../../components/Input';
 import Button from '../../../../components/Button';
+import './style.css';
 
 const HoursList = ({
     workTimes,
@@ -15,7 +16,7 @@ const HoursList = ({
     const { t } = useTranslation();
 
     return (
-        <div>
+        <div id="box-h">
             {workTimes.map((element, indexHour) => (
                 <>
                     <Input
@@ -39,31 +40,35 @@ const HoursList = ({
                             changeEnd(index, indexHour, event);
                         }}
                     />
-                    <Button
-                        text=""
-                        icon="trash"
-                        variant="ghost"
-                        arrow={false}
-                        disabled={false}
-                        dataTestId={`btn-remove-work-time-${index}-${indexHour}`}
-                        onClick={() => {
-                            removeWorkTime(index, indexHour);
-                        }}
-                    />
+                    <div className="trashButton">
+                        <Button
+                            text=""
+                            icon="trash"
+                            variant="ghost"
+                            arrow={false}
+                            disabled={false}
+                            dataTestId={`btn-remove-work-time-${index}-${indexHour}`}
+                            onClick={() => {
+                                removeWorkTime(index, indexHour);
+                            }}
+                        />
+                    </div>
                 </>
             ))}
             <br />
-            <Button
-                text={t('labels.new')}
-                icon="add"
-                variant="primary"
-                arrow={false}
-                disabled={false}
-                dataTestId={`btn-add-work-time-${index}`}
-                onClick={() => {
-                    addWorkTime(index);
-                }}
-            />
+            <div className="trashButton">
+                <Button
+                    text={t('labels.new')}
+                    icon="add"
+                    variant="primary"
+                    arrow={false}
+                    disabled={false}
+                    dataTestId={`btn-add-work-time-${index}`}
+                    onClick={() => {
+                        addWorkTime(index);
+                    }}
+                />
+            </div>
         </div>
     );
 };
